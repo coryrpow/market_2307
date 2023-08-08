@@ -91,8 +91,20 @@ RSpec.describe Market do
   end
 
   describe "#total_inventory" do
-    it "can report the quantities of all items sold at the market by listing " do
-      
+    xit "can report the quantities of all items sold at the market by listing " do
+      @vendor1.stock(@item1, 35)
+      @vendor1.stock(@item2, 7)
+
+      @vendor2.stock(@item4, 50)
+      @vendor2.stock(@item3, 25)
+
+      @vendor3.stock(@item1, 65)
+
+      @market.add_vendor(@vendor1)
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      expect(@market.total_inventory).to eq({@item1 => 100, @item2 => 7, @item3 => 25, @item4 => 50})
     end
   end
 
@@ -108,8 +120,6 @@ RSpec.describe Market do
       @vendor1.stock(@item2, 7)
 
       @market.add_vendor(@vendor1)
-      # @market.add_vendor(@vendor2)
-      # @market.add_vendor(@vendor3)
 
       expect(@market.sorted_item_list(@vendor1)).to eq(["Peach", "Tomato"])
 

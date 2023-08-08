@@ -42,4 +42,15 @@ class Market
     alphabetized_items
   end
 
+  def total_inventory
+    total_items = {}
+
+    @vendors.each do |vendor|
+
+  end
+
+  def overstocked_items
+
+  end
+
 end
