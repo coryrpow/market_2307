@@ -44,9 +44,14 @@ class Market
 
   def total_inventory
     total_items = {}
-
     @vendors.each do |vendor|
-
+      vendor.inventory.each do |item, quantity|
+        total_items[item] ||= {quantity: 0, vendors: []}
+        total_items[item] [:quantity] += quantity
+        total_items[item] [:vendors] << vendor
+      end
+    end
+    total_items
   end
 
   def overstocked_items
