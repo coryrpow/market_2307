@@ -11,15 +11,16 @@ RSpec.describe Vendor do
 
   describe "#initialize" do
     it "exists and has readable attributes" do
-      expect(@item1).to be_a(Item)
-      expect(@item2).to be_a(Item)
       expect(@vendor).to be_a(Vendor)
 
-      expect@item1.name).to eq('Peach')
-      expect@item1.price).to eq(0.7)
+      expect(@item1.name).to eq('Peach')
+      expect(@item1.price).to eq(0.75)
+
+      expect(@vendor.name).to eq("Rocky Mountain Fresh")
+      expect(@vendor.inventory).to eq({})
     end
   end
 
-  describe ""
+
 
 end
