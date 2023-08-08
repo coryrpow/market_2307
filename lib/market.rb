@@ -29,4 +29,17 @@ class Market
     in_stock_here
   end
 
+  def sorted_item_list(vendor)
+    item_names = []
+
+    @vendors.each do |vendor|
+      vendor.inventory.each do |item, _|
+        item_names << item.name
+      end
+    end
+
+    alphabetized_items = item_names.uniq.sort
+    alphabetized_items
+  end
+
 end

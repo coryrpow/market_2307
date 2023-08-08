@@ -90,4 +90,39 @@ RSpec.describe Market do
     end
   end
 
+  describe "#total_inventory" do
+    it "can report the quantities of all items sold at the market by listing " do
+      
+    end
+  end
+
+  describe "#overstocked_items" do
+    it "list overstocked items by comparing items across vendors and if the quantity is great than 50" do
+
+    end
+  end
+
+  describe "#sorted_items_list" do
+    it "can list an array of names of all items the vendors have in stock in alphabetical order" do
+      @vendor1.stock(@item1, 35)
+      @vendor1.stock(@item2, 7)
+
+      @market.add_vendor(@vendor1)
+      # @market.add_vendor(@vendor2)
+      # @market.add_vendor(@vendor3)
+
+      expect(@market.sorted_item_list(@vendor1)).to eq(["Peach", "Tomato"])
+
+      @vendor2.stock(@item4, 50)
+      @vendor2.stock(@item3, 25)
+
+      @vendor3.stock(@item1, 65)
+
+      @market.add_vendor(@vendor2)
+      @market.add_vendor(@vendor3)
+
+      expect(@market.sorted_item_list(@vendor1)).to eq(["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"])
+
+    end
+  end
 end
