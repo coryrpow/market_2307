@@ -15,7 +15,11 @@ RSpec.describe Vendor do
       expect(@item2).to be_a(Item)
       expect(@vendor).to be_a(Vendor)
 
+      expect@item1.name).to eq('Peach')
+      expect@item1.price).to eq(0.7)
     end
   end
+
+  describe ""
 
 end
