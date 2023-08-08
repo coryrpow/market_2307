@@ -11,15 +11,9 @@ class Vendor
 
   def check_stock(item)
    @inventory.fetch(item, 0)
-  
-  #  @inventory.each do |stock|
-    
-  #   end
   end
 
   def stock(item, amount)
-
     @inventory[item] += amount
-
   end
 end

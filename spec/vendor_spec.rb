@@ -20,7 +20,7 @@ RSpec.describe Vendor do
     end
   end
 
-  describe "#check_stock" do
+  describe "#check_stock/stock" do
     it "can check for any stocked items and list the amount in stock" do
       expect(@vendor.check_stock(@item1)).to eq(0)
 
