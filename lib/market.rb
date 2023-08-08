@@ -19,5 +19,14 @@ class Market
     end
   end
   
+  def vendors_that_sell(item)
+    in_stock_here = []
+    @vendors.each do |vendor|
+      if vendor.inventory.key?(item)
+      in_stock_here << vendor
+      end
+    end
+    in_stock_here
+  end
 
 end
