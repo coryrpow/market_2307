@@ -2,8 +2,7 @@ require './lib/item'
 require './lib/vendor'
 
 class Market
-  attr_reader :name,
-              :vendors 
+  attr_reader :name, :vendors
 
   def initialize(name)
     @name = name
@@ -12,6 +11,13 @@ class Market
 
   def add_vendor(vendor)
    @vendors << vendor
+  end
+
+  def vendor_names
+    @vendors.map do |vendor|
+      vendor.name
+    end
+  end
   
 
 end
